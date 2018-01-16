@@ -2,11 +2,11 @@ require 'sinatra/base'
 
 class Battle < Sinatra::Base
   get '/' do
-    "Welcome to Battle!"
+    erb(:index)
   end
 
   get '/new_player' do
-    erb(:index)
+    erb(:new_player)
   end
 
   post '/names' do
