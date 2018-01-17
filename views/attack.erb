@@ -1,2 +1,7 @@
-<p> <%= @player_1 %> has attacked <%= @player_2 %>!</p>
-<p> <%= @player_2 %> has lost 10 HP! </p>
+<p> <%= @player_1.name %> has attacked <%= @player_2.name %>!</p>
+<p> <%= @player_2.name %> has lost 10 HP! </p>
+
+
+<form action="/play" method="get">
+  <input type="submit" value="Continue!">
+</form>
