@@ -16,8 +16,12 @@ class Game
     @players.last
   end
 
-  def attack(player)
-    player.take_damage
+  def attack
+    if @current_turn == player_1
+      player_2.take_damage
+    else
+      player_1.take_damage
+    end
   end
 
   def switch_turn

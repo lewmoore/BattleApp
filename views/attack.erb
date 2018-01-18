@@ -1,5 +1,18 @@
-<p> <%= @game.player_1.name%> has attacked <%= @game.player_2.name %>!</p>
-<p> <%= @game.player_2.name %> has lost 10 HP! </p>
+
+<% if @game.current_turn == @game.player_1 %>
+<p> <%= @game.player_2.name %> attacked <%= @game.player_1.name %> </p>
+<% else %>
+<p> <%= @game.player_1.name %> attacked <%= @game.player_2.name %> </p>
+<% end %>
+
+<% if @game.current_turn == @game.player_1 %>
+  <%= @game.player_1.name %> lost 10HP!
+<% else %>
+<p>  <%= @game.player_2.name %> lost 10HP! </p>
+<% end %>
+<!--
+
+<p> <%= @game.opponent_of(@current_turn).name %> has lost 10 HP! </p> -->
 
 
 <form action="/play" method="get">

@@ -16,10 +16,12 @@ describe Game do
     end
 
   describe '#attack' do
-    it 'decreases players HP' do
+    it 'decreases player 2\'s HP' do
       expect(player_2).to receive(:take_damage)
-      game.attack(player_2)
+      game.attack
     end
+
+
   end
 
   describe '#current_turn' do
@@ -34,4 +36,6 @@ describe Game do
       expect(game.current_turn).to eq player_2
     end
   end
+
+
 end
