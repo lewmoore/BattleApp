@@ -15,15 +15,6 @@ describe Game do
       end
     end
 
-  describe '#attack' do
-    it 'decreases player 2\'s HP' do
-      expect(player_2).to receive(:take_damage)
-      game.attack
-    end
-
-
-  end
-
   describe '#current_turn' do
     it 'defaults to player 1 turn first' do
       expect(game.current_turn).to eq player_1

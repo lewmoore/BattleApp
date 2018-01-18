@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/attack.rb'
 
 
 class Battle < Sinatra::Base
@@ -28,7 +29,7 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.attack
+    Attack.run(@game.opponent_of(@game.current_turn))
     @game.switch_turn
     erb :attack
   end
